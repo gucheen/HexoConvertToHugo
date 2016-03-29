@@ -48,7 +48,8 @@ def convert_file(file_path,out_dir,file_temp=None):
         with open(file_temp,'r') as f:
             temp_content = f.read()
         m_temp = temp_regex.match(temp_content)
-        m_head = toml.loads(m_temp.group(1))
+        if m_temp:
+            m_head = toml.loads(m_temp.group(1))
 
 
     content = ''
